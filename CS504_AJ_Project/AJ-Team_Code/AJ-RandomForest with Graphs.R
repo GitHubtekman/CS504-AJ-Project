@@ -1,4 +1,5 @@
-####################################################################
+# CS504 Working Version for Final Project
+# Date 11-25-21
 #########################
 # Bill Thomson 
 # Original code provided for RF Regression Lab M4A
