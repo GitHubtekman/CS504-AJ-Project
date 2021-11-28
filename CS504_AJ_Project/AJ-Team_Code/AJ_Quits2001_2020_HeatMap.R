@@ -1,3 +1,13 @@
+# CS504 Working Version for Final Project
+# Date 11-25-21
+#########################
+# Bill Thomson 
+# Original code provided for RF  Lab 
+# R Studio Version 1.4.1106
+# R version 4,04
+# Windows 10, i7 10th gen 64-bit operating system, x64-based processor 
+# 64GB ram and 4TB SSD
+######################## 
 install.packages("ggcorrplot")
 # Install
 library(ggcorrplot)
