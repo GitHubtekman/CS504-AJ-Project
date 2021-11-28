@@ -7,8 +7,11 @@
 # R version 4,04
 # Windows 10, i7 10th gen 64-bit operating system, x64-based processor 
 # 64GB ram and 4TB SSD
-########################  
-
+######################## 
+# randomForest and rpart and rpart.plot with boos and OOB RF
+# 60 training 30 test and 75/25
+# error and plots for bagged and rf and important
+# Base on original code stat515 labs
 library(randomForest)
 library(rpart)
 library(rpart.plot)
@@ -37,7 +40,7 @@ onDiag <- function(x, ...){
    panel.lines(d,col=rgb(.83,.66,1),lwd=2)
    diag.panel.splom(x, ...)
 }
-splom(QI[,c(1-11)],
+splom(QI[,c(1-12)],
       xlab='',main="Quits Industry 2016-2021 \n5 Year",
       pscale=0, varname.cex=0.7,axis.text.cex=0.8,
       axis.text.col="blue",axis.text.font=2,
@@ -153,10 +156,10 @@ abline(0,1, col='green')
 ### Variable Importance
 windows(width=9,height=9)
 par(mfrow = c(1, 3))
-## 5.1- bagged
+## bagged
 importance(bag.QI)
 varImpPlot(bag.QI, type = 1)
-## 6.1- random forest
+## random forest
 importance(rf.QI)
 varImpPlot(rf.QI, type = 1)
 ## ISLR Boosted
@@ -164,7 +167,7 @@ summary(boost.QI)
 
 
 #############################################
-## From Section 6.2 - Random Forest using only 6 predictors with default ntree=25
+## Random Forest using only 6 predictors with default ntree=25
 rf.QI=randomForest(medv~., data = QI, subset = train6,ntree=25, mtry = 6, importance = TRUE)
 yhat.rfs = predict(rf.QI,newdata=QI[-train6,])
 meanrfs=mean((yhat.rfs-QI.test6)^2)
