@@ -13,7 +13,7 @@ install.packages("ggcorrplot")
 library(ggcorrplot)
 
 setwd("C:/Users/billa/Desktop/CS504 Working Data Sets")
-QI <- read.csv(file="Quit_2015_2020q.csv", header = TRUE, 
+QI <- read.csv(file="Quit_2016_2021q.csv", header = TRUE, 
                                sep=',', row.names =1)
 
 par(mfrow=c(4,4))
