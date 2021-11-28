@@ -8,7 +8,7 @@
 # 64GB ram and 4TB SSD
 ########################  
 # Random Forest Regression with Trees
-# Mosidiws deom stat515 cODE
+# Based on stat515 Project Code and related Lab
 
 library(randomForest)
 library(rpart)
@@ -131,7 +131,7 @@ pvar5
 
 #prcVarden = sum(y_pred - mean(y_true)) ^ 2
 
-## From Section 6.1 - Random Forest using only 6 predictors with default ntree=500
+##Random Forest using only 6 predictors with default ntree=500
 rf.QI=randomForest(Trad.tranutil~., data = QI, subset = train6, mtry = 6, importance = TRUE)
 rf.QI
 
@@ -176,8 +176,7 @@ varImpPlot(rf.QI, type = 1)
 summary(boost.QI)
 
 
-#############################################
-## From Section 6.2 - Random Forest using only 6 predictors with default ntree=25
+############################################# Random Forest using only 6 predictors with default ntree=25
 rf.QI=randomForest(Trad.tranutil~., data = QI, subset = train6,ntree=25, mtry = 6, importance = TRUE)
 yhat.rfs = predict(rf.QI,newdata=QI[-train6,])
 meanrfs=mean((yhat.rfs-QI.test6)^2)
