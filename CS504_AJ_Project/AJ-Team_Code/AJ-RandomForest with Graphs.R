@@ -83,13 +83,13 @@ rpart.plot(bostAll, faclen=12, extra=1, digits=3, main=" Regression Model \n Man
 
 # Lets set up our test data taking out the training data set
 set.seed(2457) # also try seed of 137
-train5 = sample(1:nrow(QI), nrow(QI)/2)
+train5 = sample(1:nrow(QI), nrow(QI)/3)
 QI.test5 = QI[-train5,]$Manufacturing
 
-train6 = sample(1:nrow(QI), nrow(QI)/2)
+train6 = sample(1:nrow(QI), nrow(QI)/3)
 QI.test6 = QI[-train6,]$Manufacturing
 
-trainbst = sample(1:nrow(QI), nrow(QI)/2)
+trainbst = sample(1:nrow(QI), nrow(QI)/4)
 QI.testbst = QI[-trainbst,]$Manufacturing
 
 # lets see how they perform with the same samples
