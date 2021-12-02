@@ -78,7 +78,7 @@ windows(width=9, height=9) ## For MS Windows
 
 bostAll=rpart(Trd_Tran_.util~. ,data=QI) 
 rpart.plot(bostAll, faclen=12, extra=1, digits=3, main=" Regression Model \n Trade Transportation Utilities Data")
-bostAll=rpart(Trd_Tran_.util~. ,data=QI) 
+bostAll=rpart(Manufacturing~. ,data=QI) 
 rpart.plot(bostAll, faclen=12, extra=1, digits=3, main=" Regression Model \n Manufacturing Data")
 
 # Lets set up our test data taking out the training data set
