@@ -9,7 +9,7 @@
 # 64GB ram and 4TB SSD
 ######################## 
 # randomForest and rpart and rpart.plot with boos and OOB RF
-# 60 training 30 test and 75/25
+# 60 training 30 test and 70 training and 30 test
 # error and plots for bagged and rf and important
 # Base on original code stat515 labs
 library(randomForest)
@@ -83,13 +83,13 @@ rpart.plot(bostAll, faclen=12, extra=1, digits=3, main=" Regression Model \n Man
 
 # Lets set up our test data taking out the training data set
 set.seed(2457) # also try seed of 137
-train5 = sample(1:nrow(QI), nrow(QI)/3)
+train5 = sample(1:nrow(QI), nrow(QI)/1.5)
 QI.test5 = QI[-train5,]$Manufacturing
 
 train6 = sample(1:nrow(QI), nrow(QI)/3)
 QI.test6 = QI[-train6,]$Manufacturing
 
-trainbst = sample(1:nrow(QI), nrow(QI)/4)
+trainbst = sample(1:nrow(QI), nrow(QI)/2)
 QI.testbst = QI[-trainbst,]$Manufacturing
 
 # lets see how they perform with the same samples
@@ -115,7 +115,7 @@ pvar5
 #prcVarden = sum(y_pred - mean(y_true)) ^ 2
 
 ## From Section 6.1 - Random Forest using only 6 predictors with default ntree=500
-rf.QI=randomForest(medv~., data = QI, subset = train6, mtry = 6, importance = TRUE)
+rf.QI=randomForest(manufacturing~., data = QI, subset = train6, mtry = 6, importance = TRUE)
 rf.QI
 
 yhat.rf = predict(rf.QI,newdata=QI[-train6,])
@@ -168,7 +168,7 @@ summary(boost.QI)
 
 #############################################
 ## Random Forest using only 6 predictors with default ntree=25
-rf.QI=randomForest(medv~., data = QI, subset = train6,ntree=25, mtry = 6, importance = TRUE)
+rf.QI=randomForest(manufacturing~., data = QI, subset = train6,ntree=25, mtry = 6, importance = TRUE)
 yhat.rfs = predict(rf.QI,newdata=QI[-train6,])
 meanrfs=mean((yhat.rfs-QI.test6)^2)
 meanrfs
