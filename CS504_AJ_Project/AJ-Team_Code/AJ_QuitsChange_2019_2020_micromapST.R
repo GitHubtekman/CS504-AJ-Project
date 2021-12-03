@@ -1,5 +1,5 @@
 # CS504 Working Version for Final Project
-# Date 11-25-21
+# Date 12-3-21
 #########################
 # Bill Thomson 
 # Original code provided for RF  Lab 
@@ -10,6 +10,7 @@
 ########################  
 # MicromapST % Changes for Quits and Employment_Unemployment 2019-2020
 ########################library(micromapST)
+library(micromapST)
 library(data.table)
 library(tidyverse)
 setwd("C:/Users/billa/Desktop/CS504 Working Data Sets")

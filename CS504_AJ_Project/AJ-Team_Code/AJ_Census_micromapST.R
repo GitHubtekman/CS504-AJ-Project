@@ -1,5 +1,5 @@
-# CS504 Working Version for Final Project
-# Date 11-25-21
+# CS504 Working Version for Team AJ Final Project
+# Date 12-3-21
 #########################
 # Bill Thomson 
 # Original code provided for RF  Lab 
@@ -30,7 +30,7 @@ Census2015_2020 <-Census2015_2020[-c(1)]
 head(Census2015_2020)
 
 panelDesc = data.frame(                   
-  type=c("map","id","arrow","arrow","arrow","arrow"), 
+  type=c("mapmedian","id","arrow","arrow","arrow","arrow"), 
   lab1=c("","","Unemployed","Employed","Unemployed","Employed"),
   lab2=c("","","Females","Females","Males","Males"),  
   lab3=c("","","","","",""),
