@@ -1,4 +1,4 @@
-# CS504 Working Version for Final Project
+# CS504 Working Version for AJ Final Project
 # Date 12-3-21
 #########################
 # Bill Thomson 
@@ -9,7 +9,7 @@
 # 64GB ram and 4TB SSD
 ########################  
 # Correlation wit Loess Regression Lines Quits Data
-# Code adapted from STAT 515 Labs, Original By:       Daniel Carr
+# Code adapted from STAT 515 Labs, Original By: Daniel Carr
 ########################
 
 library(GGally)
