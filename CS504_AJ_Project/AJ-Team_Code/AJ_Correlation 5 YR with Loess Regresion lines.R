@@ -1,4 +1,4 @@
-# CS504 Working Version for AJ Final Project
+# CS504 Working Version for Team AJ Final Project
 # Date 12-3-21
 #########################
 # Bill Thomson 
